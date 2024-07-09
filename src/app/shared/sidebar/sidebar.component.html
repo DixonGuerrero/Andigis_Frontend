@@ -1,0 +1,113 @@
+<div
+  class="menu"
+  (click)="sizeSidebar()"
+>
+@if(!bigMenu()){
+  <img src="icons/menu.png" class="w-5" alt="">
+}@else {
+  <img src="icons/close_menu.png" class="w-5" alt="">
+}
+</div>
+
+<div
+  class="barra-lateral"
+>
+  <div >
+    <div class="nombre-pagina" >
+      <img class="logo_user" src="images/admin.jpg" alt="" (click)="toggleLogo()">
+      <span>Holiss</span>
+      
+  </div>
+ 
+  </div>
+
+  <div class="linea"></div>
+
+  <nav class="navegacion ">
+    <p class="">Páginas</p>
+    <ul>
+      <li class="">
+        <a
+          routerLink="/admin/dashboard"
+          routerLinkActive="active"
+          class="option"
+        >
+          <img src="icons/home.png" class="icon_option" />
+          <span class="pl-2">Principal</span>
+        </a>
+      </li>
+      <li class="">
+        <a
+          routerLink="/admin/books"
+          routerLinkActive="active"
+          class="option"
+        >
+          <img src="icons/book.png" class="icon_option" />
+          <span class="pl-2">Libros</span>
+        </a>
+      </li>
+     
+      
+    </ul>
+  </nav>
+
+  <div>
+    <div class="linea"></div>
+
+    <div
+      class="modo-oscuro"
+    >
+      @if(!darkMode()){
+      <div
+        class="info "
+      >
+        <img
+          src="icons/dark_mode.png"
+          class="icon"
+          alt=""
+        />
+        <span id="texto-Tema">Modo oscuro</span>
+      </div>
+      }@else {
+      <div
+        class="info "
+      >
+        <img src="icons/sun.png" class="icon" alt="" />
+        <span id="texto-Tema">Modo claro</span>
+      </div>
+      }
+
+      <div
+        class="switch "
+        (click)="darkMode.set(!darkMode())"
+      >
+        @if(darkMode()){
+        <img
+          src="icons/switch_active.png"
+          class="icon"
+          alt=""
+        />
+        }@else {
+        <img
+          src="icons/switch_disabled.png"
+          class="icon"
+          alt=""
+        />
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<main >
+  <app-nav-bar/>
+
+  <div class="contenido">
+    <router-outlet />
+  </div>
+ 
+</main>
+
+

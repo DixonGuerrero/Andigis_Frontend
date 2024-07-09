@@ -1,0 +1,27 @@
+<nav >
+   <div class="contenedor-navbar">
+      <h2 class="title_navbar">Andigis</h2>
+
+      
+
+      <div class="options_navbar">
+         <form [formGroup]="formSearch" class="formulario_busqueda" (ngSubmit)="onSubmit()">   
+            <label for="simple-search" class="sr-only">Search</label>
+            <div class="container_input_search">
+                
+                <input type="text" id="simple-search" class="input_search" placeholder="Buscar libro" required formControlName="search"  />
+            </div>
+            <button  type="submit"  class="button_search">
+                <svg class="logo_input" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+                <span class="sr-only">Buscar</span>
+            </button>
+        </form>
+
+        <p-menu #menu [model]="items" [popup]="true" />
+    <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"/>
+      </div>
+   </div>
+</nav>
+

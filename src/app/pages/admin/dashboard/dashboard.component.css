@@ -1,0 +1,8 @@
+.contenedor {
+   background-color: #fff;
+   display: flex;
+   gap: 15px;
+   flex-wrap: wrap;
+
+   justify-content: space-around;
+}

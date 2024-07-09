@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+/* Agregando imports de Prime Ng para poder usar los contenedores de la libreria */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+/* Agregando Iconos de Prime Ng */
+@import "primeicons/primeicons.css";
+
