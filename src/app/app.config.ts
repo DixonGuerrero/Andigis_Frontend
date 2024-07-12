@@ -4,10 +4,11 @@ import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 
 //Importaciones de PrimeNG
-import { MessageService } from 'primeng/api'; 
+import { ConfirmationService, MessageService } from 'primeng/api'; 
 
 //Importaciones para las animaciones
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { ConfirmDialog } from 'primeng/confirmdialog';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideAnimations(),
-    MessageService
+    MessageService,
+    ConfirmationService
   ]
 };

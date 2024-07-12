@@ -15,7 +15,7 @@ import { SearchService } from '../../core/services/admin/search.service';
 })
 export class NavBarComponent { 
   
-  items: MenuItem[] | undefined;
+  opciones: MenuItem[] | undefined;
   formSearch = new FormGroup({
     search: new FormControl('')
   });
@@ -23,14 +23,22 @@ export class NavBarComponent {
   constructor(private searchService: SearchService, private router: Router) {}
 
   ngOnInit(): void {
-        this.items = [
+        this.opciones = [
             {
                 label: 'Opciones',
                 items: [
                     {
-                        label: 'Cerrar Sesion',
-                        icon: 'pi pi-sign-out'
+                      label: 'Configuracion',
+                      icon: 'pi pi-cog',
+                      
+
                     },
+                    {
+                        label: 'Cerrar Sesion',
+                        icon: 'pi pi-sign-out',
+                        routerLink: ['/login']
+                    }
+                    
                     //TODO: Aqui se pueden agregar mas opciones al menu desplegable del navbar 😁
                 ]
             }

@@ -28,7 +28,7 @@ export class LoginComponent {
 
   onLogin(): void {
     if (this.loginForm.value.username === '' || this.loginForm.value.password === '') {
-      this.messageService.add({severity: 'error', summary: 'Error', detail: 'Usuario o contraseña incorrectos'});
+      this.messageService.add({severity: 'error', summary: 'Error', detail: 'Usuario o contraseña vacios'});
       return;
     }
     

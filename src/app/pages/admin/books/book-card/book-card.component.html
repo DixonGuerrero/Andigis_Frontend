@@ -1,12 +1,18 @@
-   <p-card header="El hombre el busca de sentido" subheader="Muy bueno, leanlo alguna vez en la vida" [style]="{ width: '300px',}">
+   <p-card header="{{book.name}}" subheader="{{book.author}}" [style]="{ width: '200px', }">
        <ng-template pTemplate="header">
-           <img alt="Card" src="images/image.png" />
+           <img alt="Card" src="{{book.image_url}}" />
        </ng-template>
 
        <ng-template pTemplate="footer">
            <div class="flex gap-3 mt-1">
               
-               <p-button label="Detalles" class="w-full" styleClass="w-full" />
+            <div class="card flex justify-content-center">
+                <p-toast />
+                <p-button (onClick)="show()" icon="pi pi-search" label="Select a Product" />
+            </div>
            </div>
        </ng-template>
+
+      
+       
    </p-card>

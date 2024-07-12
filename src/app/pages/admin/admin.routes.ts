@@ -3,7 +3,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { BookPageComponent } from "./books/book-page/book-page.component";
 import { SearchComponent } from "./search/search.component";
-import { BookMovementsPageComponent } from "./book-movements/book-movements-page/book-movements-page.component";
+import { LoanPageComponent } from "./loan-page/loan-page.component";
+
 
 export const RoutesAdmin: Routes = [
    {
@@ -21,8 +22,9 @@ export const RoutesAdmin: Routes = [
             path: 'search', component: SearchComponent
          },
          {
-            path: 'bookmovement', component: BookMovementsPageComponent
+            path: 'loans', component: LoanPageComponent
          }
+         
          
       ]
    }

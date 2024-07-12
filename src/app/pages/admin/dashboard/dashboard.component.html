@@ -4,14 +4,8 @@
   </h2>
 
   <div class="contenedor">
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
-    <app-book-card />
+   @for(book of datosBD ; track book.name){
+    <app-book-card [book]="book"/>
+   }
   </div>
 </div>
