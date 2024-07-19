@@ -9,6 +9,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 //Importaciones para las animaciones
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ConfirmDialog } from 'primeng/confirmdialog';
+import { DialogService } from 'primeng/dynamicdialog';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideAnimations(),
     MessageService,
-    ConfirmationService
+    ConfirmationService,
+    DialogService
   ]
 };

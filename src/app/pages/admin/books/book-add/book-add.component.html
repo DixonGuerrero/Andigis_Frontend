@@ -1,1 +1,34 @@
-<p>book-add works!</p>
+<div class="card">
+   <h2>Crear Libro</h2>
+   <form [formGroup]="bookAddForm" (ngSubmit)="createBook()">
+     <div class="field">
+       <label for="name">Nombre:</label>
+       <input id="name" formControlName="name" />
+     </div>
+ 
+     <div class="field">
+       <label for="copies">Copias:</label>
+       <input id="copies" type="number" formControlName="copies" />
+     </div>
+ 
+     <div class="field">
+       <label for="genre">Género:</label>
+       <input id="genre" formControlName="genre" />
+     </div>
+ 
+     <div class="field">
+       <label for="author">Autor:</label>
+       <input id="author" formControlName="author" />
+     </div>
+ 
+     <div class="field">
+       <label for="image_url">URL de Imagen:</label>
+       <input id="image_url" formControlName="image_url" />
+     </div>
+ 
+     <div class="field">
+       <button type="submit" [disabled]="bookAddForm.invalid">Crear Libro</button>
+     </div>
+   </form>
+ </div>
+ 

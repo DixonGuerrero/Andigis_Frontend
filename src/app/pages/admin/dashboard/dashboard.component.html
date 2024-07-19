@@ -1,11 +1,8 @@
-<div class="">
-  <h2>
-   Contenido de ejemplo, ya despues miraremos que ponemos aqui en el dashboard
-  </h2>
 
+<div class="contenido">
   <div class="contenedor">
-   @for(book of datosBD ; track book.name){
+   @for(book of books ; track book.id){
     <app-book-card [book]="book"/>
    }
   </div>
-</div>
+

@@ -1,0 +1,108 @@
+<div class="card">
+    <p-table [value]="returns" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:20%">Id Devolución</th>
+                <th style="width:20%">Libro</th>
+                <th style="width:20%">Fecha Devolución</th>
+                <th style="width:20%">Documento prestamista</th>
+                <th style="width:20%">Nombre Prestamista</th>
+                
+                
+                <th style="width:20%"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-return let-editing="editing" let-ri="rowIndex">
+            <tr [pEditableRow]="return">
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="return.id" />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{return.id}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <img [src]="getImageUrl(return.id_book)" [alt]="return.id_book" width="100" class="shadow-4" />
+                </td>
+
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="return.date" 
+                                required />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{return.date}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="return.document" 
+                                required />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{return.document}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="return.name_render" 
+                                required />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{return.name_render}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <div class="flex align-items-center justify-content-center gap-2">
+                        <button 
+                            *ngIf="!editing" 
+                            pButton 
+                            pRipple 
+                            type="button" 
+                            pInitEditableRow 
+                            icon="pi pi-pencil" 
+                            (click)="onRowEditInit(return)" 
+                            class="p-button-rounded p-button-text">
+                        </button>
+                        <button 
+                            *ngIf="editing" 
+                            pButton 
+                            pRipple 
+                            type="button" 
+                            pSaveEditableRow 
+                            icon="pi pi-check" 
+                            (click)="onRowEditSave(return)" 
+                            class="p-button-rounded p-button-text p-button-success mr-2">
+                        </button>
+                        <button 
+                            *ngIf="editing" 
+                            pButton pRipple 
+                            type="button" 
+                            pCancelEditableRow 
+                            icon="pi pi-times" 
+                            (click)="onRowEditCancel(return, ri)" 
+                            class="p-button-rounded p-button-text p-button-danger">
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

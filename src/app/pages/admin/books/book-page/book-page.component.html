@@ -1,1 +1,35 @@
-asd;lkjf;lasdjf;asdjf;asfj;as
+
+<p-table [value]="books" [tableStyle]="{'min-width': '60rem'}">
+    <ng-template pTemplate="caption">
+        <div class="header_table flex align-items-center justify-content-between">
+            Libros
+            <p-button label="Crear Libro" (onClick)="formAddBook()"></p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Autor</th>
+            <th>Genero</th>
+            <th>Copias</th>
+            <th>Detalles</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+        <tr>
+            <td>{{book.name}}</td>
+            <td><img src={{book.image_url}} [alt]="book.name" width="100" class="shadow-4" /></td>
+            <td>{{book.author}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.copies}}</td>
+            <td><p-button icon="pi pi-eye" (onClick)="show(book)"></p-button></td>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            En total hay {{books ? books.length : 0 }} libros.
+        </div>
+    </ng-template>
+</p-table>

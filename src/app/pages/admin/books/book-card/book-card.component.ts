@@ -6,6 +6,7 @@ import { DialogService, DynamicDialogModule, DynamicDialogRef } from 'primeng/dy
 import { ToastModule } from 'primeng/toast';
 import { BookDetailsComponent } from '../book-details/book-details.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { IBook } from '../../../../core/models/admin/book.interface';
 
 @Component({
   selector: 'app-book-card',
@@ -16,7 +17,14 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   providers: [DialogService, MessageService]
 })
 export class BookCardComponent {
-@Input() book: any;
+    @Input() book: IBook = {
+        id: '',
+        name: '',
+        copies: 0,
+        genre: '',
+        author: '',
+        image_url: ''
+    };
 
 
 constructor(public dialogService: DialogService, public messageService: MessageService) {}
@@ -25,13 +33,19 @@ ref: DynamicDialogRef | undefined;
 
 show() {
     this.ref = this.dialogService.open( BookDetailsComponent, {
-        header: 'Select a Product',
+        header: 'Detalles',
         width: '50vw',
         contentStyle: { overflow: 'auto' },
         breakpoints: {
             '960px': '75vw',
             '640px': '90vw'
         },
+
+        data:{
+    
+           book: this.book
+
+        }
 
     });
 

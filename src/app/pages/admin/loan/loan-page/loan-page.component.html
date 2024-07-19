@@ -1,0 +1,100 @@
+<div class="card">
+    <p-table [value]="loans" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:20%">Id Del Prestamo</th>
+                <th style="width:20%">Libro</th>
+                <th style="width:20%">Fecha Prestamo</th>
+                <th style="width:20%">Documento prestamista</th>
+                <th style="width:20%">Nombre prestamista</th>
+                
+                <th style="width:20%"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-loan let-editing="editing" let-ri="rowIndex">
+            <tr [pEditableRow]="loan">
+                <td>
+                   <p>{{loan.id}}</p>
+                </td>
+                <td >
+                    <img [src]="getImageUrl(loan.id_book)" [alt]="loan.id_book" width="100" class="shadow-4" />
+                </td>
+
+                {{loan.image_book}}
+
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="loan.date" 
+                                required />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{loan.date}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="loan.document" 
+                                required />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{loan.document}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input 
+                                pInputText type="text" 
+                                [(ngModel)]="loan.name_render" 
+                                required />
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{loan.name_render}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <div class="flex align-items-center justify-content-center gap-2">
+                        <button 
+                            *ngIf="!editing" 
+                            pButton 
+                            pRipple 
+                            type="button" 
+                            pInitEditableRow 
+                            icon="pi pi-pencil" 
+                            (click)="onRowEditInit(loan)" 
+                            class="p-button-rounded p-button-text">
+                        </button>
+                        <button 
+                            *ngIf="editing" 
+                            pButton 
+                            pRipple 
+                            type="button" 
+                            pSaveEditableRow 
+                            icon="pi pi-check" 
+                            (click)="onRowEditSave(loan)" 
+                            class="p-button-rounded p-button-text p-button-success mr-2">
+                        </button>
+                        <button 
+                            *ngIf="editing" 
+                            pButton pRipple 
+                            type="button" 
+                            pCancelEditableRow 
+                            icon="pi pi-times" 
+                            (click)="onRowEditCancel(loan, ri)" 
+                            class="p-button-rounded p-button-text p-button-danger">
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

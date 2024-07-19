@@ -1,14 +1,18 @@
 <div class="card">
-   <div style="height: 500px; position: relative; bottom: 0; right: 0;" class="speeddial-circle-demo">
-       <p-toast />
+   <div  class="img">
+       <img src="{{book.image_url}}" alt="">
+    </div>
        <p-speedDial 
            [model]="items?items:[]" 
            radius="120" 
            direction="up-left" 
            type="quarter-circle" 
-           buttonClassName="p-button-success" />
-   </div>
-
+           buttonClassName="p-button-success" />     
+   <div class=" descripcion">
+           <h1>Caracteristicas</h1>
+          <h2>{{book.name}}</h2> 
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat laudantium qui voluptatem voluptatibus ipsa exercitationem numquam, recusandae, quaerat ab hic perferendis </p>
+          <h3>{{book.author}}  <br> {{book.genre}} <p>Ejemplares:{{book.copies}}</p> </h3> 
+         </div>
 </div>
-
 <p-confirmDialog />

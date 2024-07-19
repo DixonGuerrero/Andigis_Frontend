@@ -1,0 +1,10 @@
+.container_search {
+  margin-top: 20px;
+}
+
+.results{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+
+}

@@ -1,1 +1,13 @@
-<p>{{searchTerm}}</p>
+<div class="container_search">
+  <h1>Resultados de busquedad....</h1>
+  <div class="results">
+    @if(books.length != 0){ @for(book of books; track book.id){
+    <app-book-card [book]="book" />
+    } }@else{
+    <div class="text-center">
+      <h2 class="text-muted">No hay libros Encontrados</h2>
+    </div>
+
+    }
+  </div>
+</div>

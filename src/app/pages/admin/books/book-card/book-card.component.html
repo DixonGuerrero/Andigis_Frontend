@@ -1,18 +1,16 @@
-   <p-card header="{{book.name}}" subheader="{{book.author}}" [style]="{ width: '200px', }">
-       <ng-template pTemplate="header">
-           <img alt="Card" src="{{book.image_url}}" />
-       </ng-template>
-
-       <ng-template pTemplate="footer">
-           <div class="flex gap-3 mt-1">
-              
-            <div class="card flex justify-content-center">
-                <p-toast />
-                <p-button (onClick)="show()" icon="pi pi-search" label="Select a Product" />
+<div class="card-container">
+        <div class="custom-card">
+            <img alt="Card" src="{{book.image_url}}" />
+            <div class="card-content">
+                <div class="card-header">
+                    {{book.name}}
+                </div>
+                <div class="card-subheader">
+                    {{book.author}}
+                </div>
             </div>
-           </div>
-       </ng-template>
-
-      
-       
-   </p-card>
+            <div class="card-footer">
+                <button class="custom-button" (click)="show()">Detalles</button>
+            </div>
+        </div>
+    </div>

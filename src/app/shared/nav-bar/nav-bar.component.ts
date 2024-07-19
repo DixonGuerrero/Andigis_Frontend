@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { SearchService } from '../../core/services/admin/search.service';
 
 @Component({
@@ -14,13 +14,15 @@ import { SearchService } from '../../core/services/admin/search.service';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent { 
+
+
   
   opciones: MenuItem[] | undefined;
   formSearch = new FormGroup({
     search: new FormControl('')
   });
 
-  constructor(private searchService: SearchService, private router: Router) {}
+  constructor(private searchService: SearchService, public router: Router,public messageService : MessageService) {}
 
   ngOnInit(): void {
         this.opciones = [
@@ -49,6 +51,8 @@ export class NavBarComponent {
 
   onSubmit(): void {
     if(this.formSearch.value.search === '') {
+      console.log('No se envio nada');
+      this.messageService.add({severity:'error', summary: 'Error', detail: 'No se envio nada'});
       return;
     }
 
