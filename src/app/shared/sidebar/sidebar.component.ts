@@ -4,6 +4,8 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
 import { MenuItem } from 'primeng/api';
+import { IUser } from '../../core/models/auth/user.interface';
+import { CognitoService } from '../../core/services/auth/cognito.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +15,8 @@ import { MenuItem } from 'primeng/api';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent implements OnInit {
+
+  user: IUser;
 
   items: MenuItem[] | undefined;
 
@@ -27,7 +31,18 @@ export class SidebarComponent implements OnInit {
   darkMode = signal<boolean>(true)
   bigMenu = signal<boolean>(false)
 
+  constructor( private cognitoService: CognitoService) {
+    this.user = {} as IUser;
+  }
+
   ngOnInit(): void {
+
+    
+    this.cognitoService.userUpdated$.subscribe((updatedUser: IUser) => {
+      this.user = updatedUser; 
+    });
+    
+    this.getUserInfo();
 
      this.items = [
           {
@@ -103,6 +118,13 @@ export class SidebarComponent implements OnInit {
     } else {
       this.darkMode.set(false);
     }
+  }
+
+  //Funcion para obtener info del usuario
+  getUserInfo(): void {
+    this.cognitoService.getUser().then((user) => {
+      this.user = user.attributes;
+    })
   }
 
 }

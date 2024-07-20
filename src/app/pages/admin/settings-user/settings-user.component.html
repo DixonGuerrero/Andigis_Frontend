@@ -1,0 +1,45 @@
+<main>
+   <h1>Configuracion de cuenta</h1>
+   <section>
+      <div class="container_img">
+         <img [src]="user.picture" alt="">
+        
+      </div>
+
+      <div class="card">
+         <h2>Actualizar Datos </h2>
+         <form [formGroup]="userEdit" (ngSubmit)="updateUser()">
+           <div class="field">
+             <label for="name">Nombre Usuario:</label>
+             <input id="name" formControlName="name" />
+           </div>
+       
+           <div class="field">
+             <label for="email">Direccion Email:</label>
+             <input id="email" formControlName="email" />
+           </div>
+
+           <div class="field">
+            <label for="imagen"> URL Imagen:</label>
+            <input id="imagen" formControlName="imagen" />
+          </div>
+       
+           
+       
+           <div class="field">
+            @if(!loading){
+               <button type="submit" [disabled]="userEdit.invalid">Actualizar Datos</button>
+            } 
+            @if(loading){
+               <p-progressSpinner 
+               styleClass="w-2rem h-2rem" 
+               strokeWidth="8" 
+               fill="var(--surface-ground)" 
+               animationDuration=".5s" />
+            }
+           </div>
+         </form>
+       </div>
+       
+   </section>
+</main>

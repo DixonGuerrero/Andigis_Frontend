@@ -5,6 +5,7 @@ import { BookPageComponent } from "./books/book-page/book-page.component";
 import { SearchComponent } from "./search/search.component";
 import { LoanPageComponent } from "./loan/loan-page/loan-page.component";
 import { devoledPageComponent } from "./devolved/devoled-page/devoled-page.component";
+import { SettingsUserComponent } from "./settings-user/settings-user.component";
 
 
 export const RoutesAdmin: Routes = [
@@ -27,6 +28,9 @@ export const RoutesAdmin: Routes = [
          },
          {
             path: 'devolved', component: devoledPageComponent
+         },
+         {
+            path: 'settings', component: SettingsUserComponent
          }
 
          

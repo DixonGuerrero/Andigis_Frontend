@@ -1,6 +1,6 @@
 <main>
   <section>
-    <h1>LOGIN</h1>
+    <h1>Login</h1>
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
       <div class="form-group">
         <label for="email">Nombre de Usuario</label>
@@ -25,12 +25,17 @@
       ></p-password>
       </div>
       <div class="button-container">
-        <p-button type="submit" label="Iniciar sesion" />
+        @if(loading){
+          <p-progressSpinner ariaLabel="loading" />
+          }
+        @if(!loading){
+          <p-button type="submit" label="Iniciar sesion" />
+        }
       </div>
-      <!-- <div class="register-container">
+      <div class="register-container">
         <p>¿No tienes una cuenta?</p>
-        <a routerLink="/auth/register">Regístrate</a>
-      </div> -->
+        <a routerLink="/register">Regístrate</a>
+      </div> 
     </form>
   </section>
 </main>

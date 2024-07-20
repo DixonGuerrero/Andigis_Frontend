@@ -1,0 +1,31 @@
+.contenedor-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-not-found{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   
+}
+
+h2{
+   font-size: 100px;
+   color: #277ff3;
+   margin: 0px;
+}
+
+h4{
+   font-size: 30px;
+   color: #ffffff
+}
+
+p{
+   font-size: 20px;
+   color: #ffffff;
+   text-align: center;
+}
+

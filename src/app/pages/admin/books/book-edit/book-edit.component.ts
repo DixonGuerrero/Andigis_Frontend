@@ -15,7 +15,7 @@ import { ToastModule } from 'primeng/toast';
 @Component({
   selector: 'app-book-edit',
   standalone: true,
-  imports: [ButtonModule, DialogModule, ReactiveFormsModule, ToastModule],
+  imports: [ButtonModule, DialogModule, ReactiveFormsModule],
   templateUrl: './book-edit.component.html',
   styleUrl: './book-edit.component.css',
 })
@@ -96,7 +96,10 @@ export class BookEditComponent implements OnInit {
           summary: 'Exito',
           detail: 'Libro editado',
         });
-        this.instance?.close();
+        setTimeout(() => {
+          this.instance?.close();
+        },500);
+        
       },
       (error) => {
         this.messageService.add({

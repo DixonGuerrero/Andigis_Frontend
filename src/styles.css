@@ -5,3 +5,10 @@
 /* Agregando Iconos de Prime Ng */
 @import "primeicons/primeicons.css";
 
+body{
+   background-image: url(../public/images/fondop.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+}
+   

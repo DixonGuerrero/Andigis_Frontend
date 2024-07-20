@@ -141,7 +141,25 @@
    border: 0;
  }
 
- .options_navbar{
+
+ .options_navbar div {
   display: flex;
   gap: 2px;
+ }
+
+ @media (max-width: 640px) {
+  .options_navbar{
+    width: 100%;
+  }
+
+   .options_navbar div{
+    width: 100%;
+     justify-content: start;
+   }
+
+   .formulario_busqueda{
+    margin: 0px;
+   }
+
+
  }

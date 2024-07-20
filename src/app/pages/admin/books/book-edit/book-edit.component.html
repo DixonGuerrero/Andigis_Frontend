@@ -21,9 +21,8 @@
     <input pInputText id="email" class="flex-auto" autocomplete="off" formControlName="imagen" />
 </div>
    <div class="flex">
-       <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
-       <p-button type="submit" label="Save" (onClick)="visible = false" />
+       <p-button label="Cancelar" severity="secondary" (onClick)="this.ref?.close()" />
+       <p-button type="submit" label="Guardar" (onClick)="visible = false" />
    </div>
 
-   <p-toast />
 </form>

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-andigisfront-dev-e49a5-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654435785:role/amplify-andigisfront-dev-e49a5-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654435785:role/amplify-andigisfront-dev-e49a5-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-andigisfront-dev-e49a5-deployment",
+      "UnauthRoleName": "amplify-andigisfront-dev-e49a5-unauthRole",
+      "StackName": "amplify-andigisfront-dev-e49a5",
+      "StackId": "arn:aws:cloudformation:us-east-1:654654435785:stack/amplify-andigisfront-dev-e49a5/730c9640-45fa-11ef-9709-0e4ed6c4db93",
+      "AmplifyAppId": "d2q3n5l4h6gf8e"
+    }
+  }
+}

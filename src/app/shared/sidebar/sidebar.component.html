@@ -14,8 +14,8 @@
 >
   <div >
     <div class="nombre-pagina" >
-      <img class="logo_user" src="images/admin.jpg" alt="" (click)="toggleLogo()">
-      <span>Holiss</span>
+      <img class="logo_user" [src]="user.picture" alt="" (click)="toggleLogo()">
+      <span>{{user.name ? user.name : 'No tienes username'}}</span>
       
   </div>
  
